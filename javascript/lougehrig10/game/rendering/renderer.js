@@ -55,7 +55,9 @@ var terrain = new THREE.ParametricGeometry(terrainFunc, 100, 100);
 var terrainMaterial = new THREE.MeshLambertMaterial({color: 0xF3FFE2});
 var terrainMesh = new THREE.Mesh(terrain, terrainMaterial);
 
-terrainMesh.position.set(-FAR/2,-MAX_HEIGHT,-FAR/2);
+terrainMesh.position.set(-FAR/2,-MAX_HEIGHT,FAR/2);
+
+terrainMesh.rotation.set(Math.PI,0,0);
 
 scene.add(terrainMesh);
 
@@ -66,7 +68,7 @@ var geom = new THREE.CubeGeometry(100,100,100);
 var material = new THREE.MeshBasicMaterial();
 var mesh = new THREE.Mesh(geom, material);
 
-mesh.position.set(0,-10,-1000)
+mesh.position.set(0,0,0);
 
 scene.add(mesh);
 
